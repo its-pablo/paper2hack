@@ -1,2 +1,2 @@
 # paper2hack
-Paper.io Userscript/Extension
+Next-gen paper.io userscript/extension. Modifies elements in the paper.io api.
