@@ -1,5 +1,6 @@
 // ==UserScript==
 // @name         paper2hack
+// @description  Modding utility/menu for paper.io
 // @version      0.1
 // @author       its-pablo
 // @match        https://paper-io.com/*
