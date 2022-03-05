@@ -1,22 +1,26 @@
 // ==UserScript==
 // @name         paper2hack
 // @description  Modding utility/menu for paper.io
-// @version      0.1
+// @version      0.1.2
 // @author       its-pablo
-// @match        https://paper-io.com/*
+// @match        https://paper-io.com/
 // @icon         https://paper-io.com/favicon.ico
 // @grant        none
 // ==/UserScript==
 
 (function() {
     'use strict';
-
-   let overlayHTML = `
+    let head = document.getElementsByTagName('head')[0];
+    let ui = document.createElement('script')
+    ui.setAttribute('src', '//code.jquery.com/ui/1.13.1/jquery-ui.js')
+    //head.appendChild(ui)
+    let overlayHTML = `
 <div id="box">
     <button class="ou" id="accordian">paper2hack v1</button>
     <div class="ou" id="box2">
 
         <section><label>Scroll to zoom</label><input id="zooming" type="checkbox"></section>
+        <section><label>Debug menu</label><input id="debugCtx" type="checkbox"></section>
         <section>
         <div class="dropdown"><p>Skin (hover)</p>
           <div class="dropdown-content"><p id="skinbtn1">No Skin</p><p id="skinbtn2"><img src="https://paper-io.com/newpaperio/images/skin-01-big.png"><br>Nyan Cat</p><p id="skinbtn3"><img src="https://paper-io.com/newpaperio/images/skin-02-big.png"><br>Watermelon</p><p id="skinbtn4">Pac Man Ghost</p><p id="skinbtn5"><img src="https://paper-io.com/newpaperio/images/skin-04-big.png" /><br />Pizza</p><p id="skinbtn6"><img src="https://paper-io.com/newpaperio/images/skin-05-big.png" /><br />Minion</p><p id="skinbtn7">Fred Fazbear</p><p id="skinbtn8">Spiderman</p></div>
@@ -29,7 +33,7 @@
         <section><label>Arena Size</label><input id="arenaSize" type="number"></section>
         <section><label>Quad Size</label><input id="quadSize" type="number"></section>
         <section><label>Bots count</label><input id="botsCount" type="number"></section>
-        <section><div class="dropdown"><button onclick="challengeUnlock()" class="dropbtn" id="button">Unlock all skins</button></section>
+        <section><div class="dropdown"><button class="dropbtn" id="buttonUnlock">Unlock all skins</button></section>
         <section><div class="dropdown"><button class="dropbtn" id="button play">Start Game</button></section>
         <section><sub>You can hide the menu with Ctrl+B</sub></section>
 </div>
@@ -78,7 +82,7 @@ input {
     transform: scale(1.3);}
 input:hover { cursor: pointer;}
 input:focus { box-shadow: 0 0 10px #9ecaed;}
-input[type=checkbox] { transform: scale(2.2);border=none;}
+input[type=checkbox] { outline:none;}
 input[type=radio] { border-top: auto;}
 input[type=color] { width: 50px;}
 
@@ -216,10 +220,11 @@ input[type=color] { width: 50px;}
 .dropdown:hover .dropbtn {background-color: #121414;}
 </style>
 `
+//$('#box').draggable()
+function tog(item){if (item === true){item = false} else {item = true}}
+let skins = []
 
 function get(x){return document.getElementById(x)};
-
-function changeValue (item, value){paper2.configs.paper2_classic[item] = value}
 
 
 // Setting up the html div
@@ -453,24 +458,13 @@ let acc                 = get("accordian"),
     location.reload();
 }
     sb39.onclick = function() {
-    document.cookie = "skin=skin_43" //41 breaks
+    document.cookie = "skin=skin_43"
     location.reload();
 }
     buttonplay.onclick = function() {
     game_start();
 
 }
-function challengeUnlock(){
-paperio_challenges.greenGoblin = true;
-paperio_challenges.matrix = true;
-paperio_challenges.orange = true;
-paperio_challenges.c27 = true; //pennywise
-paperio_challenges.kill300 = true; //joker
-paperio_challenges.kill50 = true; //joker
-
-
-}
-
 
 //Hide/show menu with keyboard shortcut for streamers
 document.onkeydown = function(e) {
@@ -483,8 +477,29 @@ document.onkeydown = function(e) {
   }
 };
 
+document.getElementById("debugCtx").addEventListener("input", function(e){
+if (document.getElementById("debugCtx").checked){
+paper2.game.debug = false;
+paper2.game.debugGraph = false;
+} else {
+paper2.game.debug = true;
+paper2.game.debugGraph = true;
+}
+})
+
+document.getElementById("buttonUnlock").addEventListener("click", function(e){
+paperio_challenges.greenGoblin = true;
+paperio_challenges.doctorquest = true;
+paperio_challenges.matrix = true;
+paperio_challenges.impostor = true;
+paperio_challenges.c1 = true;
+paperio_challenges.doge = true;
+paperio_challenges.c27 = true; //pennywise
+paperio_challenges.kill300 = true; //joker
+paperio_challenges.kill50 = true; //reaper
+this.remove()
+})
 //Zooming in or out function
-navigator.clipboard.writeText(JSON.stringify(paperio_challenges))
 window.addEventListener('wheel', function(event) {
     if (event.deltaY > 0) {
         if (window.paper2.configs.paper2_classic.maxScale > 0.45) {
@@ -500,12 +515,12 @@ document.getElementById("unitSpeed").value = paper2.configs.paper2_classic.unitS
 document.getElementById("arenaSize").value = paper2.configs.paper2_classic.arenaSize;
 document.getElementById("quadSize").value = paper2.configs.paper2_classic.quadSize;
 document.getElementById("botsCount").value = paper2.configs.paper2_classic.botsCount;
-setInterval(function(){
+document.getElementById("box").addEventListener("input", function(){
     paper2.configs.paper2_classic.unitSpeed = document.getElementById("unitSpeed").value;
     paper2.configs.paper2_classic.arenaSize = document.getElementById("arenaSize").value;
     paper2.configs.paper2_classic.quadSize = document.getElementById("quadSize").value;
     paper2.configs.paper2_classic.botsCount = document.getElementById("botsCount").value;
 
-},200)
+})
 
 })();
