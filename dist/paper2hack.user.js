@@ -381,42 +381,42 @@ input[type=color] { width: 50px;}
         {
             name: "Geralt",
             icon: "orangeBig.png",
-            id: "skin_31"
+            id: "skin_35"
         },
         {
             name: "Covid-19",
             icon: "orangeBig.png",
-            id: "skin_32"
+            id: "skin_36"
         },
         {
             name: "Doctor",
             icon: "orangeBig.png",
-            id: "skin_33"
+            id: "skin_37"
         },
         {
             name: "Sanitizer",
             icon: "orangeBig.png",
-            id: "skin_34"
+            id: "skin_38"
         },
         {
             name: "Stay Safe Mask",
             icon: "mask60.png",
-            id: "skin_35"
+            id: "skin_39"
         },
         {
             name: "Cyberpunk",
             icon: "orangeBig.png",
-            id: "skin_36"
+            id: "skin_40"
         },
         {
             name: "Chess Piece",
             icon: "orangeBig.png",
-            id: "skin_37"
+            id: "skin_41"
         },
         {
             name: "Yoda",
             icon: "orangeBig.png",
-            id: "skin_38"
+            id: "skin_42"
         },
     ]
     skins.forEach(function(stuff, i){
