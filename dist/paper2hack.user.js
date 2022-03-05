@@ -15,25 +15,24 @@
     ui.setAttribute('src', '//code.jquery.com/ui/1.13.1/jquery-ui.js')
     //head.appendChild(ui)
     let overlayHTML = `
-<div id="box">
-    <button class="ou" id="accordian">paper2hack v1</button>
-    <div class="ou" id="box2">
+    <div id="box">
+        <button class="ou" id="accordian">paper2hack v1</button>
+        <div class="ou" id="box2">
 
-        <section><label>Scroll to zoom</label><input id="zooming" type="checkbox"></section>
-        <section><label>Debug menu</label><input id="debugCtx" type="checkbox"></section>
-        <section>
-        <div class="dropdown"><p>Skin (hover)</p></div>
-        </section>
-        <section><label>Speed</label><input id="unitSpeed" type="number"></section>
-        <section><label>Arena Size</label><input id="arenaSize" type="number"></section>
-        <section><label>Quad Size</label><input id="quadSize" type="number"></section>
-        <section><label>Bots count</label><input id="botsCount" type="number"></section>
-        <section><div class="dropdown"><button class="dropbtn" id="buttonUnlock">Unlock all skins</button></section>
-        <section><div class="dropdown"><button class="dropbtn" id="button play">Start Game</button></section>
-        <section><sub>You can hide the menu with Ctrl+B</sub></section>
-</div>
-</div>
-
+            <section><label>Scroll to zoom</label><input id="zooming" type="checkbox"></section>
+            <section><label>Debug menu</label><input id="debugCtx" type="checkbox"></section>
+            <section>
+                <div class="dropdown"><p>Skin (hover)</p></div>
+            </section>
+            <section><label>Speed</label><input id="unitSpeed" type="number"></section>
+            <section><label>Arena Size</label><input id="arenaSize" type="number"></section>
+            <section><label>Quad Size</label><input id="quadSize" type="number"></section>
+            <section><label>Bots count</label><input id="botsCount" type="number"></section>
+            <section><div class="dropdown"><button class="dropbtn" id="buttonUnlock">Unlock all skins</button></section>
+            <section><div class="dropdown"><button class="dropbtn" id="button play">Start Game</button></section>
+            <section><sub>You can hide the menu with Ctrl+B</sub></section>
+        </div>
+    </div>
 <style>
 #box {
     z-index: 10;
@@ -92,95 +91,6 @@ input[type=color] { width: 50px;}
 .dropdown {
   position: relative;
   display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-  border: 5px solid #121414;
-}
-
-.dropdown-content1 {
-  display: none;
-  position: absolute;
-  left: 170px;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-  border: 5px solid #121414;
-}
-
-.dropdown-content2 {
-  display: none;
-  position: absolute;
-  left: 340px;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-  border: 5px solid #121414;
-}
-
-.dropdown-content3 {
-  display: none;
-  position: absolute;
-  left: 510px;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-  border: 5px solid #121414;
-}
-
-.dropdown-content4 {
-  display: none;
-  position: absolute;
-  left: 680px;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-  border: 5px solid #121414;
-}
-
-.dropdown-content p {
-  color: white;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content1 p {
-  color: white;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content2 p {
-  color: white;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content3 p {
-  color: white;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content4 p {
-  color: white;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
 }
 
 .custom-button p {
