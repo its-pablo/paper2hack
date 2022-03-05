@@ -8,7 +8,7 @@
 // @grant        none
 // ==/UserScript==
 
-(function() {
+(function () {
     'use strict';
     let head = document.getElementsByTagName('head')[0];
     let ui = document.createElement('script')
@@ -220,307 +220,307 @@ input[type=color] { width: 50px;}
 .dropdown:hover .dropbtn {background-color: #121414;}
 </style>
 `
-//$('#box').draggable()
-function tog(item){if (item === true){item = false} else {item = true}}
-let skins = []
+    //$('#box').draggable()
+    function tog(item) { if (item === true) { item = false } else { item = true } }
+    let skins = []
 
-function get(x){return document.getElementById(x)};
+    function get(x) { return document.getElementById(x) };
 
 
-// Setting up the html div
-let overlay             = document.createElement("div");
-    overlay.innerHTML   = overlayHTML;
+    // Setting up the html div
+    let overlay = document.createElement("div");
+    overlay.innerHTML = overlayHTML;
     document.body.appendChild(overlay);
 
-// Getting variables from div by id's
-let acc                 = get("accordian"),
-    sb1                 = get("skinbtn1"),
-    sb2                 = get("skinbtn2"),
-    sb3                 = get("skinbtn3"),
-    sb4                 = get("skinbtn4"),
-    sb5                 = get("skinbtn5"),
-    sb6                 = get("skinbtn6"),
-    sb7                 = get("skinbtn7"),
-    sb8                 = get("skinbtn8"),
-    sb9                 = get("skinbtn9"),
-    sb10                 = get("skinbtn10"),
-    sb11                 = get("skinbtn11"),
-    sb12                 = get("skinbtn12"),
-    sb13                 = get("skinbtn13"),
-    sb14                 = get("skinbtn14"),
-    sb15                 = get("skinbtn15"),
-    sb16                 = get("skinbtn16"),
-    sb17                 = get("skinbtn17"),
-    sb18                 = get("skinbtn18"),
-    sb19                 = get("skinbtn19"),
-    sb20                 = get("skinbtn20"),
-    sb21                 = get("skinbtn21"),
-    sb22                 = get("skinbtn22"),
-    sb23                 = get("skinbtn23"),
-    sb24                 = get("skinbtn24"),
-    sb25                 = get("skinbtn25"),
-    sb26                 = get("skinbtn26"),
-    sb27                 = get("skinbtn27"),
-    sb28                 = get("skinbtn28"),
-    sb29                 = get("skinbtn29"),
-    sb30                 = get("skinbtn30"),
-    sb31                 = get("skinbtn31"),
-    sb32                 = get("skinbtn32"),
-    sb33                 = get("skinbtn33"),
-    sb34                 = get("skinbtn34"),
-    sb35                 = get("skinbtn35"),
-    sb36                 = get("skinbtn36"),
-    sb37                 = get("skinbtn37"),
-    sb38                 = get("skinbtn38"),
-    sb39                 = get("skinbtn39"),
-    sb40                 = get("skinbtn40"),
-    buttonplay           = get ("button play"),
-    hackroyale           = get ("hackedRoyale"),
-    testchange           = get ("testChange");
+    // Getting variables from div by id's
+    let acc = get("accordian"),
+        sb1 = get("skinbtn1"),
+        sb2 = get("skinbtn2"),
+        sb3 = get("skinbtn3"),
+        sb4 = get("skinbtn4"),
+        sb5 = get("skinbtn5"),
+        sb6 = get("skinbtn6"),
+        sb7 = get("skinbtn7"),
+        sb8 = get("skinbtn8"),
+        sb9 = get("skinbtn9"),
+        sb10 = get("skinbtn10"),
+        sb11 = get("skinbtn11"),
+        sb12 = get("skinbtn12"),
+        sb13 = get("skinbtn13"),
+        sb14 = get("skinbtn14"),
+        sb15 = get("skinbtn15"),
+        sb16 = get("skinbtn16"),
+        sb17 = get("skinbtn17"),
+        sb18 = get("skinbtn18"),
+        sb19 = get("skinbtn19"),
+        sb20 = get("skinbtn20"),
+        sb21 = get("skinbtn21"),
+        sb22 = get("skinbtn22"),
+        sb23 = get("skinbtn23"),
+        sb24 = get("skinbtn24"),
+        sb25 = get("skinbtn25"),
+        sb26 = get("skinbtn26"),
+        sb27 = get("skinbtn27"),
+        sb28 = get("skinbtn28"),
+        sb29 = get("skinbtn29"),
+        sb30 = get("skinbtn30"),
+        sb31 = get("skinbtn31"),
+        sb32 = get("skinbtn32"),
+        sb33 = get("skinbtn33"),
+        sb34 = get("skinbtn34"),
+        sb35 = get("skinbtn35"),
+        sb36 = get("skinbtn36"),
+        sb37 = get("skinbtn37"),
+        sb38 = get("skinbtn38"),
+        sb39 = get("skinbtn39"),
+        sb40 = get("skinbtn40"),
+        buttonplay = get("button play"),
+        hackroyale = get("hackedRoyale"),
+        testchange = get("testChange");
 
 
-//button functions
+    //button functions
 
     //WARNING Skins 31-34 will cause crash. geralt=35
 
     //first menu
 
 
-    sb1.onclick = function() {
-    document.cookie = "skin=skin_00"
-    location.reload();
-}
-    sb2.onclick = function() {
-    document.cookie = "skin=skin_01"
-    location.reload();
-}
-    sb3.onclick = function() {
-    document.cookie = "skin=skin_02"
-    location.reload();
-}
-    sb4.onclick = function() {
-    document.cookie = "skin=skin_03"
-    location.reload();
-}
-    sb5.onclick = function() {
-    document.cookie = "skin=skin_04"
-    location.reload();
-}
-    sb6.onclick = function() {
-    document.cookie = "skin=skin_05"
-    location.reload();
-}
-    sb7.onclick = function() {
-    document.cookie = "skin=skin_06"
-    location.reload();
-}
-    sb8.onclick = function() {
-    document.cookie = "skin=skin_07"
-    location.reload();
-}
-    sb9.onclick = function() {
-    document.cookie = "skin=skin_08"
-    location.reload();
-}
+    sb1.onclick = function () {
+        document.cookie = "skin=skin_00"
+        location.reload();
+    }
+    sb2.onclick = function () {
+        document.cookie = "skin=skin_01"
+        location.reload();
+    }
+    sb3.onclick = function () {
+        document.cookie = "skin=skin_02"
+        location.reload();
+    }
+    sb4.onclick = function () {
+        document.cookie = "skin=skin_03"
+        location.reload();
+    }
+    sb5.onclick = function () {
+        document.cookie = "skin=skin_04"
+        location.reload();
+    }
+    sb6.onclick = function () {
+        document.cookie = "skin=skin_05"
+        location.reload();
+    }
+    sb7.onclick = function () {
+        document.cookie = "skin=skin_06"
+        location.reload();
+    }
+    sb8.onclick = function () {
+        document.cookie = "skin=skin_07"
+        location.reload();
+    }
+    sb9.onclick = function () {
+        document.cookie = "skin=skin_08"
+        location.reload();
+    }
 
 
     //second menu
 
 
-    sb10.onclick = function() {
-    document.cookie = "skin=skin_09"
-    location.reload();
-}
-    sb11.onclick = function() {
-    document.cookie = "skin=skin_10"
-    location.reload();
-}
-    sb12.onclick = function() {
-    document.cookie = "skin=skin_11"
-    location.reload();
-}
-    sb13.onclick = function() {
-    document.cookie = "skin=skin_12"
-    location.reload();
-}
-    sb14.onclick = function() {
-    document.cookie = "skin=skin_13"
-    location.reload();
-}
-    sb15.onclick = function() {
-    document.cookie = "skin=skin_14"
-    location.reload();
-}
-    sb16.onclick = function() {
-    document.cookie = "skin=skin_15"
-    location.reload();
-}
-    sb17.onclick = function() {
-    document.cookie = "skin=skin_16"
-    location.reload();
-}
+    sb10.onclick = function () {
+        document.cookie = "skin=skin_09"
+        location.reload();
+    }
+    sb11.onclick = function () {
+        document.cookie = "skin=skin_10"
+        location.reload();
+    }
+    sb12.onclick = function () {
+        document.cookie = "skin=skin_11"
+        location.reload();
+    }
+    sb13.onclick = function () {
+        document.cookie = "skin=skin_12"
+        location.reload();
+    }
+    sb14.onclick = function () {
+        document.cookie = "skin=skin_13"
+        location.reload();
+    }
+    sb15.onclick = function () {
+        document.cookie = "skin=skin_14"
+        location.reload();
+    }
+    sb16.onclick = function () {
+        document.cookie = "skin=skin_15"
+        location.reload();
+    }
+    sb17.onclick = function () {
+        document.cookie = "skin=skin_16"
+        location.reload();
+    }
 
 
     //third menu
 
-    sb18.onclick = function() {
-    document.cookie = "skin=skin_17"
-    location.reload();
-}
-    sb19.onclick = function() {
-    document.cookie = "skin=skin_18"
-    location.reload();
-}
-    sb20.onclick = function() {
-    document.cookie = "skin=skin_19"
-    location.reload();
-}
-    sb21.onclick = function() {
-    document.cookie = "skin=skin_20"
-    location.reload();
-}
-    sb22.onclick = function() {
-    document.cookie = "skin=skin_21"
-    location.reload();
-}
-    sb23.onclick = function() {
-    document.cookie = "skin=skin_22"
-    location.reload();
-}
-    sb24.onclick = function() {
-    document.cookie = "skin=skin_23"
-    location.reload();
-}
-    sb25.onclick = function() {
-    document.cookie = "skin=skin_24"
-    location.reload();
-}
+    sb18.onclick = function () {
+        document.cookie = "skin=skin_17"
+        location.reload();
+    }
+    sb19.onclick = function () {
+        document.cookie = "skin=skin_18"
+        location.reload();
+    }
+    sb20.onclick = function () {
+        document.cookie = "skin=skin_19"
+        location.reload();
+    }
+    sb21.onclick = function () {
+        document.cookie = "skin=skin_20"
+        location.reload();
+    }
+    sb22.onclick = function () {
+        document.cookie = "skin=skin_21"
+        location.reload();
+    }
+    sb23.onclick = function () {
+        document.cookie = "skin=skin_22"
+        location.reload();
+    }
+    sb24.onclick = function () {
+        document.cookie = "skin=skin_23"
+        location.reload();
+    }
+    sb25.onclick = function () {
+        document.cookie = "skin=skin_24"
+        location.reload();
+    }
 
 
     //fourth menu
 
 
-    sb26.onclick = function() {
-    document.cookie = "skin=skin_25"
-    location.reload();
-}
-    sb27.onclick = function() {
-    document.cookie = "skin=skin_26"
-    location.reload();
-}
-    sb28.onclick = function() {
-    document.cookie = "skin=skin_27"
-    location.reload();
-}
-    sb29.onclick = function() {
-    document.cookie = "skin=skin_28"
-    location.reload();
-}
-    sb30.onclick = function() {
-    document.cookie = "skin=skin_29"
-    location.reload();
-}
-    sb31.onclick = function() {
-    document.cookie = "skin=skin_30"
-    location.reload();
-}
-    sb32.onclick = function() {
-    document.cookie = "skin=skin_35"
-    location.reload();
-}
-    sb33.onclick = function() {
-    document.cookie = "skin=skin_36"
-    location.reload();
-}
+    sb26.onclick = function () {
+        document.cookie = "skin=skin_25"
+        location.reload();
+    }
+    sb27.onclick = function () {
+        document.cookie = "skin=skin_26"
+        location.reload();
+    }
+    sb28.onclick = function () {
+        document.cookie = "skin=skin_27"
+        location.reload();
+    }
+    sb29.onclick = function () {
+        document.cookie = "skin=skin_28"
+        location.reload();
+    }
+    sb30.onclick = function () {
+        document.cookie = "skin=skin_29"
+        location.reload();
+    }
+    sb31.onclick = function () {
+        document.cookie = "skin=skin_30"
+        location.reload();
+    }
+    sb32.onclick = function () {
+        document.cookie = "skin=skin_35"
+        location.reload();
+    }
+    sb33.onclick = function () {
+        document.cookie = "skin=skin_36"
+        location.reload();
+    }
 
 
     //fifth menu
 
 
-    sb34.onclick = function() {
-    document.cookie = "skin=skin_37"
-    location.reload();
-}
-    sb35.onclick = function() {
-    document.cookie = "skin=skin_38"
-    location.reload();
-}
-    sb36.onclick = function() {
-    document.cookie = "skin=skin_39"
-    location.reload();
-}
-    sb37.onclick = function() {
-    document.cookie = "skin=skin_40"
-    location.reload();
-}
-    sb38.onclick = function() {
-    document.cookie = "skin=skin_42" //41 breaks
-    location.reload();
-}
-    sb39.onclick = function() {
-    document.cookie = "skin=skin_43"
-    location.reload();
-}
-    buttonplay.onclick = function() {
-    game_start();
-
-}
-
-//Hide/show menu with keyboard shortcut for streamers
-document.onkeydown = function(e) {
-  if (e.ctrlKey && e.which == 66) {
-    if (document.getElementById("box").style.display == "none") {
-        document.getElementById("box").style.display = "block"
-    } else {
-        document.getElementById("box").style.display = "none"
+    sb34.onclick = function () {
+        document.cookie = "skin=skin_37"
+        location.reload();
     }
-  }
-};
-
-document.getElementById("debugCtx").addEventListener("input", function(e){
-if (document.getElementById("debugCtx").checked){
-paper2.game.debug = false;
-paper2.game.debugGraph = false;
-} else {
-paper2.game.debug = true;
-paper2.game.debugGraph = true;
-}
-})
-
-document.getElementById("buttonUnlock").addEventListener("click", function(e){
-paperio_challenges.greenGoblin = true;
-paperio_challenges.doctorquest = true;
-paperio_challenges.matrix = true;
-paperio_challenges.impostor = true;
-paperio_challenges.c1 = true;
-paperio_challenges.doge = true;
-paperio_challenges.c27 = true; //pennywise
-paperio_challenges.kill300 = true; //joker
-paperio_challenges.kill50 = true; //reaper
-this.remove()
-})
-//Zooming in or out function
-window.addEventListener('wheel', function(event) {
-    if (event.deltaY > 0) {
-        if (window.paper2.configs.paper2_classic.maxScale > 0.45) {
-            window.paper2.configs.paper2_classic.maxScale -= 0.2;
-        }
-    } else if (event.deltaY < 0) {
-        if (window.paper2.configs.paper2_classic.maxScale < 4.5) {
-            window.paper2.configs.paper2_classic.maxScale += 0.2;
-        }
+    sb35.onclick = function () {
+        document.cookie = "skin=skin_38"
+        location.reload();
     }
-});
-document.getElementById("unitSpeed").value = paper2.configs.paper2_classic.unitSpeed;
-document.getElementById("arenaSize").value = paper2.configs.paper2_classic.arenaSize;
-document.getElementById("quadSize").value = paper2.configs.paper2_classic.quadSize;
-document.getElementById("botsCount").value = paper2.configs.paper2_classic.botsCount;
-document.getElementById("box").addEventListener("input", function(){
-    paper2.configs.paper2_classic.unitSpeed = document.getElementById("unitSpeed").value;
-    paper2.configs.paper2_classic.arenaSize = document.getElementById("arenaSize").value;
-    paper2.configs.paper2_classic.quadSize = document.getElementById("quadSize").value;
-    paper2.configs.paper2_classic.botsCount = document.getElementById("botsCount").value;
+    sb36.onclick = function () {
+        document.cookie = "skin=skin_39"
+        location.reload();
+    }
+    sb37.onclick = function () {
+        document.cookie = "skin=skin_40"
+        location.reload();
+    }
+    sb38.onclick = function () {
+        document.cookie = "skin=skin_42" //41 breaks
+        location.reload();
+    }
+    sb39.onclick = function () {
+        document.cookie = "skin=skin_43"
+        location.reload();
+    }
+    buttonplay.onclick = function () {
+        game_start();
 
-})
+    }
+
+    //Hide/show menu with keyboard shortcut for streamers
+    document.onkeydown = function (e) {
+        if (e.ctrlKey && e.which == 66) {
+            if (document.getElementById("box").style.display == "none") {
+                document.getElementById("box").style.display = "block"
+            } else {
+                document.getElementById("box").style.display = "none"
+            }
+        }
+    };
+
+    document.getElementById("debugCtx").addEventListener("input", function (e) {
+        if (document.getElementById("debugCtx").checked) {
+            paper2.game.debug = false;
+            paper2.game.debugGraph = false;
+        } else {
+            paper2.game.debug = true;
+            paper2.game.debugGraph = true;
+        }
+    })
+
+    document.getElementById("buttonUnlock").addEventListener("click", function (e) {
+        paperio_challenges.greenGoblin = true;
+        paperio_challenges.doctorquest = true;
+        paperio_challenges.matrix = true;
+        paperio_challenges.impostor = true;
+        paperio_challenges.c1 = true;
+        paperio_challenges.doge = true;
+        paperio_challenges.c27 = true; //pennywise
+        paperio_challenges.kill300 = true; //joker
+        paperio_challenges.kill50 = true; //reaper
+        this.remove()
+    })
+    //Zooming in or out function
+    window.addEventListener('wheel', function (event) {
+        if (event.deltaY > 0) {
+            if (window.paper2.configs.paper2_classic.maxScale > 0.45) {
+                window.paper2.configs.paper2_classic.maxScale -= 0.2;
+            }
+        } else if (event.deltaY < 0) {
+            if (window.paper2.configs.paper2_classic.maxScale < 4.5) {
+                window.paper2.configs.paper2_classic.maxScale += 0.2;
+            }
+        }
+    });
+    document.getElementById("unitSpeed").value = paper2.configs.paper2_classic.unitSpeed;
+    document.getElementById("arenaSize").value = paper2.configs.paper2_classic.arenaSize;
+    document.getElementById("quadSize").value = paper2.configs.paper2_classic.quadSize;
+    document.getElementById("botsCount").value = paper2.configs.paper2_classic.botsCount;
+    document.getElementById("box").addEventListener("input", function () {
+        paper2.configs.paper2_classic.unitSpeed = document.getElementById("unitSpeed").value;
+        paper2.configs.paper2_classic.arenaSize = document.getElementById("arenaSize").value;
+        paper2.configs.paper2_classic.quadSize = document.getElementById("quadSize").value;
+        paper2.configs.paper2_classic.botsCount = document.getElementById("botsCount").value;
+
+    })
 
 })();
