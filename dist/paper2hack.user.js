@@ -222,8 +222,210 @@ input[type=color] { width: 50px;}
 `
     //$('#box').draggable()
     function tog(item) { if (item === true) { item = false } else { item = true } }
-    let skins = []
-
+    let skins = [
+        {
+            name: "No skin",
+            icon: null,
+            id: "skin_00"
+        },
+        {
+            name: "Nyan cat",
+            icon: "skin-01-big.png",
+            id: "skin_01"
+        },
+        {
+            name: "Watermelon",
+            icon: "skin-02-big.png",
+            id: "skin_02"
+        },
+        {
+            name: "Pac man ghost",
+            icon: "skin-03-big.png",
+            id: "skin_03"
+        },
+        {
+            name: "Pizza",
+            icon: "skin-04-big.png",
+            id: "skin_04"
+        },
+        {
+            name: "Minion",
+            icon: "skin-05-big.png",
+            id: "skin_05"
+        },
+        {
+            name: "Fred Fazbaer",
+            icon: "skin-06-big.png",
+            id: "skin_06"
+        },
+        {
+            name: "Spider-man",
+            icon: "skin-07-big.png",
+            id: "skin_07"
+        },
+        {
+            name: "Teletubby",
+            icon: "skin-08-big.png",
+            id: "skin_08"
+        },
+        {
+            name: "Unicorn",
+            icon: "skin-09-big.png",
+            id: "skin_09"
+        },
+        {
+            name: "Rainbow heart",
+            icon: "skin-10-big.png",
+            id: "skin_10"
+        },
+        {
+            name: "Heart",
+            icon: "skin-11-big.png",
+            id: "skin_11"
+        },
+        {
+            name: "Bat",
+            icon: "bigBat.png",
+            id: "skin_12"
+        },
+        {
+            name: "Sushi",
+            icon: "bigBat.png",
+            id: "skin_13"
+        },
+        {
+            name: "Cash",
+            icon: "bigBat.png",
+            id: "skin_14"
+        },
+        {
+            name: "Cake",
+            icon: "bigBat.png",
+            id: "skin_15"
+        },
+        {
+            name: "Pool Floaty",
+            icon: "bigBat.png",
+            id: "skin_16"
+        },
+        {
+            name: "Tank",
+            icon: "bigBat.png",
+            id: "skin_17"
+        },
+        {
+            name: "Ladybug",
+            icon: "bigBat.png",
+            id: "skin_18"
+        },
+        {
+            name: "Cheeseburger",
+            icon: "burgerBig.png",
+            id: "skin_19"
+        },
+        {
+            name: "Orange",
+            icon: "orangeBig.png",
+            id: "skin_20"
+        },
+        {
+            name: "Christmas Tree",
+            icon: "orangeBig.png",
+            id: "skin_21"
+        },
+        {
+            name: "Present",
+            icon: "orangeBig.png",
+            id: "skin_22"
+        },
+        {
+            name: "Snowman",
+            icon: "orangeBig.png",
+            id: "skin_23"
+        },
+        {
+            name: "Cupid",
+            icon: "cupid_60.png",
+            id: "skin_24"
+        },
+        {
+            name: "Thanos",
+            icon: "thanos60.png",
+            id: "skin_25"
+        },
+        {
+            name: "Captain America",
+            icon: "capAmerica.png",
+            id: "skin_26"
+        },
+        {
+            name: "Reaper",
+            icon: "orangeBig.png",
+            id: "skin_27"
+        },
+        {
+            name: "Pennywise",
+            icon: "orangeBig.png",
+            id: "skin_28"
+        },
+        {
+            name: "Joker",
+            icon: "orangeBig.png",
+            id: "skin_29"
+        },
+        {
+            name: "Batman",
+            icon: "orangeBig.png",
+            id: "skin_30"
+        },
+        {
+            name: "Geralt",
+            icon: "orangeBig.png",
+            id: "skin_31"
+        },
+        {
+            name: "Covid-19",
+            icon: "orangeBig.png",
+            id: "skin_32"
+        },
+        {
+            name: "Doctor",
+            icon: "orangeBig.png",
+            id: "skin_33"
+        },
+        {
+            name: "Sanitizer",
+            icon: "orangeBig.png",
+            id: "skin_34"
+        },
+        {
+            name: "Stay Safe Mask",
+            icon: "mask60.png",
+            id: "skin_35"
+        },
+        {
+            name: "Cyberpunk",
+            icon: "orangeBig.png",
+            id: "skin_36"
+        },
+        {
+            name: "Chess Piece",
+            icon: "orangeBig.png",
+            id: "skin_37"
+        },
+        {
+            name: "Yoda",
+            icon: "orangeBig.png",
+            id: "skin_38"
+        },
+    ]
+    skins.forEach(function(stuff, i){
+        let drpdwn = document.getElementsByClassName("dropdown")[0];
+        let el = document.createElement("p")
+        el.innerHTML = `<img src="/newpaperio/images/${stuff.icon}"><br />${stuff.name}`
+        drpdwn.appendChild(el)
+        skins[i].element = el;
+    })
     function get(x) { return document.getElementById(x) };
 
 
@@ -281,7 +483,7 @@ input[type=color] { width: 50px;}
 
     //button functions
 
-    //WARNING Skins 31-34 will cause crash. geralt=35
+    //WARNING: Skins 31-34 will not work
 
     //first menu
 
