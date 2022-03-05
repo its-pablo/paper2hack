@@ -422,7 +422,7 @@ input[type=color] { width: 50px;}
     skins.forEach(function(stuff, i){
         let drpdwn = document.getElementsByClassName("dropdown")[0];
         let el = document.createElement("p")
-        el.innerHTML = `<img src="/newpaperio/images/${stuff.icon}"><br />${stuff.name}`
+        el.innerHTML += `<img src="/newpaperio/images/${stuff.icon}"><br />${stuff.name}`
         drpdwn.appendChild(el)
         skins[i].element = el;
     })
