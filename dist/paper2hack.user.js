@@ -12,10 +12,9 @@ window.addEventListener("load", function () {
     'use strict';
     //setup
     let head = document.getElementsByTagName('head')[0];
-    let ui = document.createElement('script')
-    ui.setAttribute('src', '//code.jquery.com/ui/1.13.1/jquery-ui.js')
-    head.appendChild(ui)
-    alert('jquery-ui loaded')
+    let game = location.url === "https://paper-io.com/teams/" ? paperio2api.game : paper2.game
+    let config = location.url === "https://paper-io.com/teams/" ? paperio2api.config : paper2.currentConfig
+    let startGame = location.url === "https://paper-io.com/teams/" ? paperio2api.startGame() : game_start()
     let overlayHTML = `
 <div id="box">
     <button class="ou" id="accordian">paper2hack v1</button>
@@ -300,7 +299,7 @@ input[type=color] { width: 50px;}
             id: "skin_42"
         },
     ]
-    skins.forEach(function (stuff, i) {
+    skins.forEach(function(stuff, i){
         let drpdwn = document.getElementsByClassName("dropdown")[0];
         let el = document.createElement("p")
         el.innerHTML += `<img src="/newpaperio/images/${stuff.icon}"><br />${stuff.name}`
@@ -359,6 +358,8 @@ input[type=color] { width: 50px;}
             }
         }
     });
+    function randInt(min, max) {return Math.floor(Math.random() * (max - min + 1) + min)}
+
     document.getElementById("unitSpeed").value = paper2.configs.paper2_classic.unitSpeed;
     document.getElementById("arenaSize").value = paper2.configs.paper2_classic.arenaSize;
     document.getElementById("quadSize").value = paper2.configs.paper2_classic.quadSize;
@@ -368,7 +369,7 @@ input[type=color] { width: 50px;}
         paper2.configs.paper2_classic.arenaSize = document.getElementById("arenaSize").value;
         paper2.configs.paper2_classic.quadSize = document.getElementById("quadSize").value;
         paper2.configs.paper2_classic.botsCount = document.getElementById("botsCount").value;
-        paper2.game.units.forEach(function (item) { item.name = document.getElementById("nameChange").value })
+        paper2.game.units.forEach(function(item){item.name = document.getElementById("nameChange").value})
     })
 
 });
