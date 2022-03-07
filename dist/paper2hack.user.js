@@ -8,7 +8,7 @@
 // @grant        none
 // ==/UserScript==
 
-window.addEventListener("DOMContentLoaded", function () {
+window.addEventListener("load", function () {
     'use strict';
     //setup
     let head = document.getElementsByTagName('head')[0];
