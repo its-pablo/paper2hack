@@ -30,6 +30,7 @@ window.addEventListener("load", function () {
         <section><label>Arena Size</label><input id="arenaSize" type="number"></section>
         <section><label>Quad Size</label><input id="quadSize" type="number"></section>
         <section><label>Bots count</label><input id="botsCount" type="number"></section>
+        <section><label>Change name</label><input id="nameChange" type="text"></section>
         <section><div class="dropdown"><button class="dropbtn" id="buttonUnlock">Unlock all skins</button></section>
         <section><div class="dropdown"><button class="dropbtn" id="button play" onclick="game_start()">Start Game</button></section>
         <section><sub>You can hide the menu with Ctrl+B</sub></section>
@@ -101,7 +102,6 @@ input[type=color] { width: 50px;}
 }
 </style>
 `
-    //$('#box').draggable()
     function tog(item) { if (item === true) { item = false } else { item = true } }
     let skins = [
         {
@@ -300,7 +300,7 @@ input[type=color] { width: 50px;}
             id: "skin_42"
         },
     ]
-    skins.forEach(function(stuff, i){
+    skins.forEach(function (stuff, i) {
         let drpdwn = document.getElementsByClassName("dropdown")[0];
         let el = document.createElement("p")
         el.innerHTML += `<img src="/newpaperio/images/${stuff.icon}"><br />${stuff.name}`
@@ -312,7 +312,7 @@ input[type=color] { width: 50px;}
     let overlay = document.createElement("div");
     overlay.innerHTML = overlayHTML;
     document.body.appendChild(overlay);
-    $('#box').draggable()
+    //$('#box').draggable()
 
     //Hide/show menu with keyboard shortcut for streamers
     document.onkeydown = function (e) {
@@ -368,7 +368,7 @@ input[type=color] { width: 50px;}
         paper2.configs.paper2_classic.arenaSize = document.getElementById("arenaSize").value;
         paper2.configs.paper2_classic.quadSize = document.getElementById("quadSize").value;
         paper2.configs.paper2_classic.botsCount = document.getElementById("botsCount").value;
-
+        paper2.game.units.forEach(function (item) { item.name = document.getElementById("nameChange").value })
     })
 
 });
