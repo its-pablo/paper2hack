@@ -3,7 +3,7 @@
 // @description  Modding utility/menu for paper.io
 // @version      0.1.2
 // @author       its-pablo
-// @match        https://paper-io.com//
+// @match        https://paper-io.com
 // @icon         https://paper-io.com/favicon.ico
 // @grant        none
 // ==/UserScript==
