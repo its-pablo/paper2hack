@@ -12,3 +12,6 @@ Additionally, you can install it easier by clicking below
 
 ### Temporary installation
 If you would lke to see how this userscript works, you can just paste in the code into the developer console (Ctrl+Shift+J)
+
+## Like it? Star it!
+paper2hack gets popular every time it is starred. Scroll to the top of the window, and click 'Star' to help us reach more consumers.
