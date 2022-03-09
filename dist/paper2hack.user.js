@@ -6,6 +6,7 @@
 // @match        https://paper-io.com
 // @icon         https://paper-io.com/favicon.ico
 // @grant        none
+// @noframes
 // ==/UserScript==
 
 window.addEventListener("load", function () {
@@ -23,7 +24,7 @@ window.addEventListener("load", function () {
         <section><label>Scroll to zoom</label><input id="zooming" type="checkbox"></section>
         <section><label>Debug menu</label><input id="debugCtx" type="checkbox"></section>
         <section>
-        <p>Skin (hover)</p><div class="dropdown"></div>
+        <p>Skin</p><div class="skinDropdown"></div>
         </section>
         <section><label>Speed</label><input id="unitSpeed" type="number"></section>
         <section><label>Arena Size</label><input id="arenaSize" type="number"></section>
@@ -31,7 +32,7 @@ window.addEventListener("load", function () {
         <section><label>Bots count</label><input id="botsCount" type="number"></section>
         <section><label>Change name</label><input id="nameChange" type="text"></section>
         <section><div class="dropdown"><button class="dropbtn" id="buttonUnlock">Unlock all skins</button></section>
-        <section><div class="dropdown"><button class="dropbtn" id="button play" onclick="game_start()">Start Game</button></section>
+        <section><div class="dropdown"><button class="dropbtn" id="button play">Start Game</button></section>
         <section><sub>You can hide the menu with Ctrl+B</sub></section>
      </div>
 </div>
