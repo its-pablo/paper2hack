@@ -23,15 +23,17 @@ window.addEventListener("load", function () {
       : paper2.currentConfig;
   let startGame =
     location.url === "https://paper-io.com/teams/"
-      ? paperio2api.startGame()
-      : game_start();
+      ? paperio2api.startGame
+      : game_start;
   let overlayHTML = `
   <div id="box">
-      <button class="ou" id="accordian">paper2hack v1</button>
+      <div id="heading"><button class="ou" id="accordian">paper2hack v1
+      <svg fill="#000000" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" width="24px" height="24px"><path d="M 5 3 C 3.9069372 3 3 3.9069372 3 5 L 3 19 C 3 20.093063 3.9069372 21 5 21 L 19 21 C 20.093063 21 21 20.093063 21 19 L 21 12 L 19 12 L 19 19 L 5 19 L 5 5 L 12 5 L 12 3 L 5 3 z M 14 3 L 14 5 L 17.585938 5 L 8.2929688 14.292969 L 9.7070312 15.707031 L 19 6.4140625 L 19 10 L 21 10 L 21 3 L 14 3 z"/></svg></button></div>
       <div class="ou" id="box2">
   
           <section><label>Scroll to zoom</label><input id="zooming" type="checkbox"></section>
           <section><label>Debug menu</label><input id="debugCtx" type="checkbox"></section>
+          <section><label>Adblock</label><input id="adBlock" type="checkbox"></section>
           <section>
           <p>Skin</p><div class="skinDropdown"></div>
           </section>
@@ -39,7 +41,7 @@ window.addEventListener("load", function () {
           <section><label>Arena Size</label><input id="arenaSize" type="number"></section>
           <section><label>Quad Size</label><input id="quadSize" type="number"></section>
           <section><label>Bots count</label><input id="botsCount" type="number"></section>
-          <section><label>Change name</label><input id="nameChange" type="text"></section>
+          <section><label>Change name</label><input id="nameChange" type="text"><button>Go</button></section>
           <section><div class="dropdown"><button id="buttonUnlock">Unlock all skins</button></section>
           <section><div class="dropdown"><button class="dropbtn" id="button play">Start Game</button></section>
           <section><sub>You can hide the menu with Ctrl+B</sub></section>
@@ -403,12 +405,24 @@ window.addEventListener("load", function () {
           game.debug = input.checked;
           game.debugGraph = input.checked;
           break;
+        case "adBlock":
+          if (input.checked) {
+            $( "iframe" ).each(function( index ) {
+              $( this ).css('display', 'none');
+            });
+            $("#gameadsbanner, #adOverlay, #aipstreamcontainer").css('display', 'none')
+          } else {
+            $("iframe").each(function (index) {
+              $(this).css('display', 'block');
+            });
+            $("#gameadsbanner, #adOverlay, #aipstreamcontainer").css('display', 'block')
+          }
       }
     });
   });
   //adblock
   let adFRAMES = ["gameadsbanner", "adOverlay", "aipstreamcontainer"];
   adFRAMES.forEach(function (string) {
-      document.getElementById(string).remove()
+    document.getElementById(string).remove()
   });
 });
