@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         paper2hack beta
+// @name         paper2hack
 // @description  Modding utility/menu for paper.io
 // @version      0.1.2
 // @author       its-pablo
@@ -9,7 +9,7 @@
 // @noframes
 // ==/UserScript==
 
-window.addEventListener("load", function () {
+(function () {
   "use strict";
   //setup
   let head = document.getElementsByTagName("head")[0];
@@ -425,4 +425,4 @@ window.addEventListener("load", function () {
   adFRAMES.forEach(function (string) {
     document.getElementById(string).remove()
   });
-});
+})();
