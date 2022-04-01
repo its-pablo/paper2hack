@@ -4,6 +4,7 @@
 // @version      0.1.2
 // @author       its-pablo
 // @match        https://paper-io.com
+// @match        https://paper-io.com/teams/
 // @icon         https://paper-io.com/favicon.ico
 // @grant        none
 // @noframes
@@ -28,9 +29,9 @@
   let overlayHTML = `
   <div id="box">
       <div id="heading"><button class="ou" id="accordian">paper2hack v1
-      <svg fill="#000000" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" width="24px" height="24px"><path d="M 5 3 C 3.9069372 3 3 3.9069372 3 5 L 3 19 C 3 20.093063 3.9069372 21 5 21 L 19 21 C 20.093063 21 21 20.093063 21 19 L 21 12 L 19 12 L 19 19 L 5 19 L 5 5 L 12 5 L 12 3 L 5 3 z M 14 3 L 14 5 L 17.585938 5 L 8.2929688 14.292969 L 9.7070312 15.707031 L 19 6.4140625 L 19 10 L 21 10 L 21 3 L 14 3 z"/></svg></button></div>
+      <svg onclick="showInWindow()" fill="#ffffff" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" width="16px" height="16px"><path style="vertical-align:center" d="M 5 3 C 3.9069372 3 3 3.9069372 3 5 L 3 19 C 3 20.093063 3.9069372 21 5 21 L 19 21 C 20.093063 21 21 20.093063 21 19 L 21 12 L 19 12 L 19 19 L 5 19 L 5 5 L 12 5 L 12 3 L 5 3 z M 14 3 L 14 5 L 17.585938 5 L 8.2929688 14.292969 L 9.7070312 15.707031 L 19 6.4140625 L 19 10 L 21 10 L 21 3 L 14 3 z"/></svg></button></div>
       <div class="ou" id="box2">
-  
+
           <section><label>Scroll to zoom</label><input id="zooming" type="checkbox"></section>
           <section><label>Debug menu</label><input id="debugCtx" type="checkbox"></section>
           <section><label>Adblock</label><input id="adBlock" type="checkbox"></section>
@@ -47,7 +48,7 @@
           <section><sub>You can hide the menu with Ctrl+B</sub></section>
        </div>
   </div>
-  
+
   <style>
   #box {
       z-index: 10;
@@ -73,7 +74,7 @@
   .ou {
       background-color: #363c3d;
       letter-spacing: 2px;
-  
+
       font-weight: bold;
       font-size: 13px;
       font-family: 'Open Sans', sans-serif;
@@ -94,7 +95,7 @@
   input[type=checkbox] { outline:none;}
   input[type=radio] { border-top: auto;}
   input[type=color] { width: 50px;}
-  
+
   .dropbtn {
     background-color: #242829;
     color: white;
@@ -102,12 +103,12 @@
     border: none;
     padding: 8px;
   }
-  
+
   .dropdown {
     position: relative;
     display: none;
   }
-  
+
   .dropdown:hover {
     display: inline-block;
   }
@@ -407,8 +408,8 @@
           break;
         case "adBlock":
           if (input.checked) {
-            $( "iframe" ).each(function( index ) {
-              $( this ).css('display', 'none');
+            $("iframe").each(function (index) {
+              $(this).css('display', 'none');
             });
             $("#gameadsbanner, #adOverlay, #aipstreamcontainer").css('display', 'none')
           } else {
@@ -425,4 +426,13 @@
   adFRAMES.forEach(function (string) {
     document.getElementById(string).remove()
   });
+  function showIn(which) {
+    if (which === "win") {
+      document.getElementById('box').remove()
+      let win = open('', '_blank',)
+      win.document.write(overlayHTML)
+    } else {
+      
+    }
+  }
 })();
