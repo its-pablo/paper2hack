@@ -25,10 +25,38 @@ class t{constructor(i,e,s,n,r="div"){this.parent=i,this.object=e,this.property=s
     location.url === "https://paper-io.com/teams/" || "https://paperanimals.io" || "https://amogus.io"
       ? paperio2api.config
       : paper2.currentConfig;
-  let OBJ = {
-      unitSpeed: config.unitSpeed
+  let ETC = {
+      "Adblock": false,
+      "Reset": function(){gui.reset()}
+      "Scroll to zoom": false
   }
   let GUI = lil.GUI
-  let gui = new GUI(undefined, undefined, undefined, undefined, "paper2hack\n v0.1.9")
-  gui.add(OBJ, "unitSpeed")
+  let gui = new GUI(undefined, undefined, undefined, undefined, "paper2hack beta\n v0.1.9")
+  gui.add(config, "unitSpeed", 1, 500, 5) //Min 1, max 500, increments by 5
+  gui.add(ETC, "Adblock").onChange(value => {
+      if(value === false){
+          for (const element of document.getElementsByTagName("iframe")){
+              element.style.display = "block"
+          }
+      } else {
+          for (const element of document.getElementsByTagName("iframe")){
+              element.style.display = "hidden"
+          }
+      }
+  })
+  gui.add(ETC, "Scroll to zoom").onChange(value => {
+      if(value === false){
+          window.addEventListener("wheel", function (event) {
+              if (event.deltaY > 0) {
+                  if (window.config.maxScale > 0.45) {
+                      window.config.maxScale -= 0.2;
+                  }
+              } else if (event.deltaY < 0) {
+                  if (window.config.maxScale < 4.5) {
+                      window.config.maxScale += 0.2;
+                  }
+              }
+          });
+      } else {alert("Not ready yet!!")}
+  })
 })();
