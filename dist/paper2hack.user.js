@@ -5,6 +5,8 @@
 // @author       its-pablo
 // @match        https://paper-io.com
 // @match        https://paper-io.com/teams/
+// @match        https://paperanimals.io
+// @match        https://amogus.io
 // @icon         https://paper-io.com/favicon.ico
 // @grant        none
 // ==/UserScript==
@@ -33,7 +35,7 @@ class t{constructor(i,e,s,n,r="div"){this.parent=i,this.object=e,this.property=s
   let GUI = lil.GUI
   let gui = new GUI(undefined, undefined, undefined, undefined, "paper2hack beta\n v0.1.9")
   gui.add(config, "unitSpeed", 1, 500, 5) //Min 1, max 500, increments by 5
-  gui.add(ETC, "Adblock").onChange(value => {
+  gui.add(ETC, "Adblock").onFinishChange(value => {
       if(value === false){
           for (const element of document.getElementsByTagName("iframe")){
               element.style.display = "block"
@@ -44,7 +46,7 @@ class t{constructor(i,e,s,n,r="div"){this.parent=i,this.object=e,this.property=s
           }
       }
   })
-  gui.add(ETC, "Scroll to zoom").onChange(value => {
+  gui.add(ETC, "Scroll to zoom").onFinishChange(value => {
       if(value === false){
           window.addEventListener("wheel", function (event) {
               if (event.deltaY > 0) {
