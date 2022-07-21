@@ -11,8 +11,6 @@
 // @grant        none
 // ==/UserScript==
 
-/* eslint-disable no-undef */
-
 (function () {
   "use strict";
 //LIB
@@ -32,16 +30,35 @@
           } else {
               return paper2.currentConfig
           }
+      },
+      get game(){
+          if(location === ("https://paper-io.com/teams/" || "https://paperanimals.io" || "https://amogus.io")){
+              return paperio2api.game
+          } else {
+              return paper2.game
+          }
       }
   }
   let ETC = {
       "Adblock": false,
       "Reset": function(){gui.reset()},
-      "Scroll to zoom": false
+      "Scroll to zoom": false,
+      "Debug": api.game.debug && api.game.debugGraph
+  }
+  function scrollE(e) {
+      if (e.deltaY > 0) {
+          if (paper2.currentConfig.maxScale > 0.45) {
+              paper2.currentConfig.maxScale -= 0.2
+          }
+      } else if (e.deltaY < 0) {
+          if (paper2.currentConfig.maxScale < 4.5) {
+              paper2.currentConfig.maxScale += 0.2
+          }
+      }
   }
   let GUI = lil.GUI
-  let gui = new GUI({title: "paper2hack beta\n v0.1.9"})
-  gui.add(api.config, "unitSpeed", 1, 500, 5).name('Speed') //Min 1, max 500, increments by 5
+  let gui = new GUI({title: "paper2hack beta v0.1.9"})
+  gui.add(api.config, "unitSpeed", 1, 500, 5).name('Speed').onChange(v => {api.config.unitSpeed = v}) //Min 1, max 500, increments by 5
   gui.add(ETC, "Adblock").onFinishChange(value => {
       if(value === false){
           for (const element of document.getElementsByTagName("iframe")){
@@ -53,19 +70,18 @@
           }
       }
   })
+
   gui.add(ETC, "Scroll to zoom").onFinishChange(value => {
-      if(value === false){
-          window.addEventListener("wheel", function (event) {
-              if (event.deltaY > 0) {
-                  if (paper2.currentConfig.maxScale > 0.45) {
-                      paper2.currentConfig.maxScale -= 0.2;
-                  }
-              } else if (event.deltaY < 0) {
-                  if (paper2.currentConfig.maxScale < 4.5) {
-                      paper2.currentConfig.maxScale += 0.2;
-                  }
-              }
-          });
-      } else {alert("Not ready yet!!")}
+      if(value === true){
+          window.addEventListener("wheel", scrollE)
+      } else {
+          window.removeEventListener("wheel", scrollE)
+      }
+  })
+  gui.add(ETC, "Reset")
+  /*Last things*/
+  gui.load(localStorage.getItem("paper2hack"))
+  gui.onFinishChange(e => {
+      localStorage.setItem("paper2hack", gui.save())
   })
 })();
