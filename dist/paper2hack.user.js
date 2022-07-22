@@ -11,7 +11,7 @@
 // @icon         https://paper-io.com/favicon.ico
 // @grant        none
 // ==/UserScript==
-
+adblock = () => false //this detects if adblock is on, we make it always return false so that the impostor skin loads
 window.addEventListener('load', function () {
   "use strict";
   window.api = {
