@@ -16,7 +16,7 @@ window.addEventListener('load', function () {
   "use strict";
   window.api = {
       get config(){
-          if(location === ("https://paper-io.com/teams/" || "https://paperanimals.io" || "https://amogus.io")){
+          if(location.href === "https://paper-io.com/teams/" || location.href === "https://paperanimals.io/" || location.href === "https://amogus.io"){
               return paperio2api.config
           } else {
               return paper2.currentConfig
